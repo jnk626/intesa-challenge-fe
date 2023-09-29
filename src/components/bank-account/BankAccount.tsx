@@ -1,8 +1,13 @@
+import { Outlet, useLoaderData } from "react-router-dom";
+import ContoDTO from "../../model/contodto";
+
 export default function BankAccount() {
+    const allAccounts = useLoaderData() as ContoDTO[]
     return (
+        <>
         <div className="flex flex-col m-10 gap-2 p-5 rounded">
             <div className="flex justify-between">
-                <h3>Nome Conto</h3>
+                <h3>{allAccounts[0].nome}</h3>
                 <span>star</span>
             </div>
             <div className="flex justify-between">
@@ -19,5 +24,7 @@ export default function BankAccount() {
                 <span>importo</span>
             </div>
         </div>
+        <Outlet />
+        </>
     )
 }

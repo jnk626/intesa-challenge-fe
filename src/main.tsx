@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-//import App from './App.tsx'
 import './dist/output.css'
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
@@ -9,8 +8,10 @@ import Root from './routes/root.tsx'
 import ErrorPage from './routes/error-page.tsx'
 import Index from './routes/index.tsx'
 import Profile from './components/profile/Profile.tsx'
+import BankAccount from './components/bank-account/BankAccount.tsx'
 import MovementsList from './components/movements-list/MovementList.element.tsx'
-import movementListLoader from './components/movements-list/MovementList.loader.ts'
+import movementsLoader from './components/movements-list/MovementList.loader.ts'
+import accountLoader from './components/bank-account/BankAccount.loader.ts'
 
 const router = createBrowserRouter([
   {
@@ -27,9 +28,16 @@ const router = createBrowserRouter([
         element: <Profile />,
         children: [
           {
-            path: "",
-            element: <MovementsList />,
-            loader: movementListLoader
+            path: "/profile/conto",
+            element: <BankAccount />,
+            loader: accountLoader,
+            children: [
+              {
+                path: "/profile/conto/movimenti",
+                element: <MovementsList />,
+                loader: movementsLoader
+              }
+            ]
           }
         ]
       }
