@@ -1,5 +1,6 @@
-import { Outlet, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import ContoDTO from "../../model/contodto";
+import MovementsList from "../movements-list/MovementList.element";
 
 export default function BankAccount() {
     const allAccounts = useLoaderData() as ContoDTO[]
@@ -24,7 +25,7 @@ export default function BankAccount() {
                 <span>importo</span>
             </div>
         </div>
-        <Outlet />
+        <MovementsList />
         </>
     )
 }

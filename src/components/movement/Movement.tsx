@@ -2,6 +2,7 @@ import { MovimentoDTO } from "../../model/movimentodto"
 import PropTypes from 'prop-types'
 
 interface MovementCardProps {
+    key: number,
     movimento: MovimentoDTO
 }
 
