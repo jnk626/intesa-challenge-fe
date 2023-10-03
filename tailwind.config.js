@@ -5,6 +5,12 @@ export default {
     minWidth: {
       '1/3': '33%'
     },
+    colors: {
+      primary: '#258900',
+      white: '#FFFFFF',
+      black: '#323232',
+      gray: '#6F6F6F'
+    },
     extend: {},
   },
   plugins: [],

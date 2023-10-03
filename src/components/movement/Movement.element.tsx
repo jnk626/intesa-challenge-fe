@@ -10,10 +10,10 @@ export default function MovementCard({ movimento }: MovementCardProps) {
   const formattedDate = movimento.data.replace("T", " ");
   return (
     <>
-      <div className="flex gap-x-5 place-items-center overflow-x-scroll border-2 rounded shadow border-solid p-5">
+      <div className="flex gap-x-5 place-items-center overflow-x-scroll rounded shadow border-solid p-5">
         {movimento.tipologia == "ENTRATA" ? (
           <svg
-            className="w-28 h-28 flex-shrink-0 mx-auto"
+            className="w-20 h-20 flex-shrink-0 mx-auto"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
@@ -22,7 +22,7 @@ export default function MovementCard({ movimento }: MovementCardProps) {
           </svg>
         ) : (
           <svg
-            className="w-28 h-28 flex-shrink-0 mx-auto"
+            className="w-20 h-20 flex-shrink-0 mx-auto"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
           >
