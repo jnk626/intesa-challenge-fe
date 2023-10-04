@@ -40,3 +40,14 @@ export const moneybag = (
   </g>
 </svg>
 )
+
+export const invoice = (
+  <svg className="w-20 h-20 flex-shrink-0 mx-auto" xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45">
+  <g id="Raggruppa_22673" data-name="Raggruppa 22673" transform="translate(11912 -2340)">
+    <g id="Raggruppa_16141" data-name="Raggruppa 16141" transform="translate(-11925 1993)">
+      <path id="Tracciato_76346" data-name="Tracciato 76346" d="M22.5,0A22.5,22.5,0,1,1,0,22.5,22.5,22.5,0,0,1,22.5,0Z" transform="translate(13 347)" fill="#f2e7f6"/>
+    </g>
+    <path id="Tracciato_83628" data-name="Tracciato 83628" d="M4.731,21.176V.727h16.94V21.176H4.731ZM22.4,21.9V0H4V21.9Zm-6.117-5.6v.727h2.224V16.3ZM7.9,16.3v.727h6.2V16.3H7.9Zm8.384-2.652v.727h2.224v-.727Zm-8.384,0v.727h6.2v-.727H7.9Zm0-2.652v.77h6.2v-.77H7.9Zm8.384,0v.77h2.224v-.77ZM7.9,4.834v.727H18.506V4.834Z" transform="translate(-11902.504 2351.5)" fill="#7c15a2" stroke="#7c15a2" stroke-width="0.2"/>
+  </g>
+</svg>
+)

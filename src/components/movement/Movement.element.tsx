@@ -1,19 +1,24 @@
-import { MovimentoDTO } from "../../model/movimentodto";
 import PropTypes from "prop-types";
-import { moneybag } from "../../assets/icons";
+import { useContext } from "react";
+
+import { MovimentoDTO } from "../../model/movimentodto";
+import { invoice, moneybag } from "../../assets/icons";
+import { BankAccountContext } from "../bank-account/BankAccount.context";
 
 interface MovementCardProps {
   key: number;
   movimento: MovimentoDTO;
-  greyBg: boolean
+  greyBg: boolean;
 }
 
 export const MovementCard = ({ movimento, greyBg }: MovementCardProps) => {
-  const formattedDate = movimento.data.replace("T", " ");
-  let cardClasses = 'flex gap-x-5 place-items-center overflow-x-scroll rounded shadow border-solid p-5'
-   
+  const formattedDate = movimento.data.replace("T", " ").substring(0, 10);
+  const valuta = useContext(BankAccountContext)
+  let cardClasses =
+    "flex gap-x-5 place-items-center overflow-x-scroll rounded shadow border-solid p-5 focus:border-red";
+
   if (greyBg) {
-    cardClasses += " bg-lightWhite"
+    cardClasses += " bg-lightWhite";
   }
 
   return (
@@ -22,29 +27,28 @@ export const MovementCard = ({ movimento, greyBg }: MovementCardProps) => {
         {movimento.tipologia == "ENTRATA" ? (
           moneybag
         ) : (
-          <svg
-            className="w-20 h-20 flex-shrink-0 mx-auto"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M16 12h2v4h-2z"></path>
-            <path d="M20 7V5c0-1.103-.897-2-2-2H5C3.346 3 2 4.346 2 6v12c0 2.201 1.794 3 3 3h15c1.103 0 2-.897 2-2V9c0-1.103-.897-2-2-2zM5 5h13v2H5a1.001 1.001 0 0 1 0-2zm15 14H5.012C4.55 18.988 4 18.805 4 18V8.815c.314.113.647.185 1 .185h15v10z"></path>
-          </svg>
+          invoice
         )}
-        <p className="text-lg">
-          {movimento.ammontare ? movimento.ammontare : "Ammontare sconosciuto"}
+        <p className="text-lg text-green whitespace-nowrap">
+          <strong>
+          {movimento.ammontare != 0 && movimento.tipologia === "ENTRATA"
+            ? `+ ${movimento.ammontare} ${valuta}`
+                        : movimento.tipologia === "USCITA"
+            ? `- ${movimento.ammontare} ${valuta}`
+            : "Ammontare sconosciuto"}
+            </strong>
         </p>
-        <p className="text-lg">
-          {movimento.tipologia ? movimento.tipologia : "Tipologia sconosciuta"}
+
+        <p className="text-lg whitespace-nowrap">
+          {movimento.data ? formattedDate : "Data sconosciuta"}
         </p>
-        
-        <p className="text-lg">{movimento.data ? formattedDate : "Data sconosciuta"}</p>
-        <p className="text-lg">{movimento.descrizione ? movimento.descrizione : " "}</p>
-        
+        <p className="text-lg whitespace-nowrap">
+          {movimento.descrizione ? movimento.descrizione : " "}
+        </p>
       </div>
     </>
   );
-}
+};
 
 MovementCard.propTypes = {
   movimento: PropTypes.instanceOf(MovimentoDTO),

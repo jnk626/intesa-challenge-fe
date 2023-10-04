@@ -1,6 +1,6 @@
 import { getAllAccountsByUserId } from "../../service/conto-service";
 
-export default async function accountLoader() {
+export const accountLoader = async () => {
     const allAccounts = await getAllAccountsByUserId();
     return allAccounts;
 }

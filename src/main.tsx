@@ -8,10 +8,10 @@ import Root from './routes/root.tsx'
 import ErrorPage from './routes/error-page.tsx'
 import Index from './routes/index.tsx'
 import Profile from './components/profile/Profile.tsx'
-import BankAccount from './components/bank-account/BankAccount.tsx'
+import { BankAccount } from './components/bank-account/BankAccount.tsx'
 //import MovementsList from './components/movements-list/MovementList.element.tsx'
 //import movementsLoader from './components/movements-list/MovementList.loader.ts'
-import accountLoader from './components/bank-account/BankAccount.loader.ts'
+import { accountLoader } from './components/bank-account/BankAccount.loader.ts'
 
 const router = createBrowserRouter([
   {

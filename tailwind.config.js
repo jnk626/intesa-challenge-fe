@@ -10,7 +10,8 @@ export default {
       white: '#FFFFFF',
       lightWhite: '#F8F8F8',
       black: '#323232',
-      gray: '#6F6F6F'
+      gray: '#6F6F6F',
+      green: '#258900'
     },
     extend: {},
   },
