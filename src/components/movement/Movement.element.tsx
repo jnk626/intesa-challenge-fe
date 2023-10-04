@@ -39,6 +39,7 @@ export const MovementCard = ({ movimento, greyBg }: MovementCardProps) => {
         </p>
         
         <p className="text-lg">{movimento.data ? formattedDate : "Data sconosciuta"}</p>
+        <p className="text-lg">{movimento.descrizione ? movimento.descrizione : " "}</p>
         
       </div>
     </>
