@@ -1,25 +1,26 @@
 import { MovimentoDTO } from "../../model/movimentodto";
 import PropTypes from "prop-types";
+import { moneybag } from "../../assets/icons";
 
 interface MovementCardProps {
   key: number;
   movimento: MovimentoDTO;
+  greyBg: boolean
 }
 
-export default function MovementCard({ movimento }: MovementCardProps) {
+export const MovementCard = ({ movimento, greyBg }: MovementCardProps) => {
   const formattedDate = movimento.data.replace("T", " ");
+  let cardClasses = 'flex gap-x-5 place-items-center overflow-x-scroll rounded shadow border-solid p-5'
+   
+  if (greyBg) {
+    cardClasses += " bg-lightWhite"
+  }
+
   return (
     <>
-      <div className="flex gap-x-5 place-items-center overflow-x-scroll rounded shadow border-solid p-5">
+      <div className={cardClasses}>
         {movimento.tipologia == "ENTRATA" ? (
-          <svg
-            className="w-20 h-20 flex-shrink-0 mx-auto"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1 11a3 3 0 0 0-3 3H7a3 3 0 0 0-3-3V9a3 3 0 0 0 3-3h10a3 3 0 0 0 3 3v6z"></path>
-            <path d="M12 8c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"></path>
-          </svg>
+          moneybag
         ) : (
           <svg
             className="w-20 h-20 flex-shrink-0 mx-auto"
