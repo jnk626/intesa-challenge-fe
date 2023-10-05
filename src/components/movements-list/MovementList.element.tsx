@@ -21,24 +21,25 @@ export const MovementsList = () => {
 
   const mappingMovs = (m: MovimentoDTO) => {
     let greyBg = false;
-    movements.indexOf(m) % 2 == 0 ? greyBg = true : greyBg = false;
-    return <MovementCard key={m.id} movimento={m} greyBg={greyBg}/>
-  }
+    movements.indexOf(m) % 2 == 0 ? (greyBg = true) : (greyBg = false);
+    return <MovementCard key={m.id} movimento={m} greyBg={greyBg} />;
+  };
 
   return (
     <>
-    <div className="flex flex-col w-screen">
-    {loading ? (
-        <p>Loading...</p>
-      ) : movements.length === 0 ? (
-        "No movements to show"
-      ) : 
-        movements.map(
-          mappingMovs
-        //movements.map((m) => <MovementCard key={m.id} movimento={m} greyBg={false}/>)
-      )}
-    </div>
-      
+      <div className="flex flex-col gap-3 pt-5 w-screen bg-white">
+        <h2 className="text-2xl ml-3"><strong>Operazioni</strong></h2>
+        {loading ? (
+          <p>Loading...</p>
+        ) : movements.length === 0 ? (
+          "No movements to show"
+        ) : (
+          movements.map(
+            mappingMovs
+            //movements.map((m) => <MovementCard key={m.id} movimento={m} greyBg={false}/>)
+          )
+        )}
+      </div>
     </>
   );
-}
+};

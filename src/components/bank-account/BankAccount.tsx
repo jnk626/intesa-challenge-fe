@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import ContoDTO from "../../model/contodto";
 import { MovementsList } from "../movements-list/MovementList.element";
 import { star, upload, eye } from "../../assets/icons";
+import { divider } from "../../assets/graphics";
 import { BankAccountContext } from "./BankAccount.context";
 
 export const BankAccount = () => {
@@ -10,7 +11,7 @@ export const BankAccount = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center my-10 mx-3 gap-5 px-5 py-10 min-h-fit w-11/12 shadow rounded-lg">
+      <div className="flex flex-col justify-center mb-10 mx-3 gap-5 px-5 py-10 min-h-fit w-11/12 shadow rounded-lg bg-white">
         <div className="flex justify-between text-3xl">
           <h3>{account.nome}</h3>
           <span>{star}</span>
@@ -32,6 +33,7 @@ export const BankAccount = () => {
           <span>{account.bilancio * 0.75 + " " + account.valuta}</span>
         </div>
       </div>
+      {divider}
       <BankAccountContext.Provider value={account.valuta}>
         <MovementsList />
       </BankAccountContext.Provider>

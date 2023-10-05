@@ -15,20 +15,22 @@ export const MovementCard = ({ movimento, greyBg }: MovementCardProps) => {
   const formattedDate = movimento.data.replace("T", " ").substring(0, 10);
   const valuta = useContext(BankAccountContext)
   let cardClasses =
-    "flex gap-x-5 place-items-center overflow-x-scroll rounded shadow border-solid p-5 focus:border-red";
+    "flex gap-x-5 place-items-center overflow-x-scroll shadow border-solid p-5 focus:border-red";
 
-  if (greyBg) {
-    cardClasses += " bg-lightWhite";
-  }
+  greyBg ? cardClasses += " bg-lightWhite" : cardClasses += " bg-white"
 
   return (
     <>
       <div className={cardClasses}>
+        <div className="flex flex-col place-items-center">
         {movimento.tipologia == "ENTRATA" ? (
           moneybag
         ) : (
           invoice
         )}
+        <p><strong>Dettaglio</strong></p>
+        </div>
+        
         <p className="text-lg text-green whitespace-nowrap">
           <strong>
           {movimento.ammontare != 0 && movimento.tipologia === "ENTRATA"
