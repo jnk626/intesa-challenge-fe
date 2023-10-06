@@ -12,6 +12,7 @@ import { BankAccount } from './components/bank-account/BankAccount.tsx'
 //import MovementsList from './components/movements-list/MovementList.element.tsx'
 //import movementsLoader from './components/movements-list/MovementList.loader.ts'
 import { accountLoader } from './components/bank-account/BankAccount.loader.ts'
+import { TalkToUs } from './components/talk-to-us/TalkToUs.tsx'
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             loader: accountLoader,
           }
         ]
+      },
+      {
+        path: "/talk-to-us",
+        element: <TalkToUs />
       }
     ]
   

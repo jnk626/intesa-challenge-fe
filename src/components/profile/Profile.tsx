@@ -6,7 +6,7 @@ export default function Profile() {
       <h2 className="text-4xl pl-5 bg-green text-white">
         <strong>Conti</strong>
       </h2>
-      <div className="bg-green pt-10">
+      <div className="bg-green pt-10 mb-20">
         <Outlet />
       </div>
     </>

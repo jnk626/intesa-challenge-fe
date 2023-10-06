@@ -1,6 +1,6 @@
 import { lens, help } from "../../assets/icons";
 
-export default function Navigation() {
+export const Navigation = () => {
   return (
     <>
       <nav>

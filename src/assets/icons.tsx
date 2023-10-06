@@ -271,3 +271,73 @@ export const help = (
     <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path>
   </svg>
 );
+
+export const dialog = (
+  <svg
+    className="w-6 h-6 flex-shrink-0 mx-auto"
+    xmlns="http://www.w3.org/2000/svg"
+    width="21.5"
+    height="21.909"
+    viewBox="0 0 21.5 21.909"
+  >
+    <g
+      id="Raggruppa_23466"
+      data-name="Raggruppa 23466"
+      transform="translate(0.75 0.75)"
+    >
+      <g
+        id="Raggruppa_15584"
+        data-name="Raggruppa 15584"
+        transform="translate(0 0)"
+      >
+        <g id="Group-9">
+          <g id="Group-4">
+            <path
+              id="Path"
+              d="M33.421-11.154a9.383,9.383,0,0,0-2.928-7A9.818,9.818,0,0,0,23.381-21a9.722,9.722,0,0,0-7.032,2.85,9.337,9.337,0,0,0-2.928,6.956,9.486,9.486,0,0,0,2.928,6.976,9.62,9.62,0,0,0,7.032,2.91,10,10,0,0,0,2.271-.279q.159-.04.438-.1a4.414,4.414,0,0,0,.458-.12,1.1,1.1,0,0,1,.219-.06q.04,0,1.614.638a7.5,7.5,0,0,0,2.052.638q.837,0,.837-.757a2.433,2.433,0,0,0-.578-1.1,2.433,2.433,0,0,1-.578-1.1q0-.4.2-.478A9.084,9.084,0,0,0,33.421-11.154Z"
+              transform="translate(-13.421 21)"
+              fill="#e2f3db"
+              stroke="#258900"
+              stroke-linecap="round"
+              stroke-width="1.5"
+              fill-rule="evenodd"
+            />
+          </g>
+        </g>
+        <g
+          id="noun_Kebab_Menu_756732"
+          data-name="noun_Kebab Menu_756732"
+          transform="translate(15.658 8.945) rotate(90)"
+        >
+          <circle
+            id="Ellisse_1023"
+            data-name="Ellisse 1023"
+            cx="1.26"
+            cy="1.26"
+            r="1.26"
+            transform="translate(0 8.4)"
+            fill="#258900"
+          />
+          <circle
+            id="Ellisse_1024"
+            data-name="Ellisse 1024"
+            cx="1.26"
+            cy="1.26"
+            r="1.26"
+            transform="translate(0 4.2)"
+            fill="#258900"
+          />
+          <circle
+            id="Ellisse_1025"
+            data-name="Ellisse 1025"
+            cx="1.26"
+            cy="1.26"
+            r="1.26"
+            transform="translate(0)"
+            fill="#258900"
+          />
+        </g>
+      </g>
+    </g>
+  </svg>
+);
