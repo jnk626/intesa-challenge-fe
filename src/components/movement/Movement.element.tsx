@@ -13,7 +13,7 @@ interface MovementCardProps {
 
 export const MovementCard = ({ movimento, greyBg }: MovementCardProps) => {
   const formattedDate = movimento.data.replace("T", " ").substring(0, 10);
-  const valuta = useContext(BankAccountContext)
+  const account = useContext(BankAccountContext)
   let cardClasses =
     "flex gap-x-5 place-items-center overflow-x-scroll shadow border-solid p-5 focus:border-red";
 
@@ -34,9 +34,9 @@ export const MovementCard = ({ movimento, greyBg }: MovementCardProps) => {
         <p className="text-lg text-green whitespace-nowrap">
           <strong>
           {movimento.ammontare != 0 && movimento.tipologia === "ENTRATA"
-            ? `+ ${movimento.ammontare} ${valuta}`
+            ? `+ ${movimento.ammontare} ${account.valuta}`
                         : movimento.tipologia === "USCITA"
-            ? `- ${movimento.ammontare} ${valuta}`
+            ? `- ${movimento.ammontare} ${account.valuta}`
             : "Ammontare sconosciuto"}
             </strong>
         </p>

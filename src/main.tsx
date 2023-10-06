@@ -11,8 +11,9 @@ import Profile from './components/profile/Profile.tsx'
 import { BankAccount } from './components/bank-account/BankAccount.tsx'
 //import MovementsList from './components/movements-list/MovementList.element.tsx'
 //import movementsLoader from './components/movements-list/MovementList.loader.ts'
-import { accountLoader } from './components/bank-account/BankAccount.loader.ts'
+import { accountLoader } from './components/profile/Profile.loader.ts'
 import { TalkToUs } from './components/talk-to-us/TalkToUs.tsx'
+import { MovementsList } from './components/movements-list/MovementList.element.tsx'
 
 const router = createBrowserRouter([
   {
@@ -27,11 +28,15 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+        loader: accountLoader,
         children: [
           {
             path: "/profile/conto",
             element: <BankAccount />,
-            loader: accountLoader,
+          },
+          {
+            path: "/profile/conto/movimenti",
+            element: <MovementsList />
           }
         ]
       },
