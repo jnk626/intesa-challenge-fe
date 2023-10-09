@@ -14,6 +14,7 @@ import { BankAccount } from './components/bank-account/BankAccount.tsx'
 import { accountLoader } from './components/profile/Profile.loader.ts'
 import { TalkToUs } from './components/talk-to-us/TalkToUs.tsx'
 import { MovementsList } from './components/movements-list/MovementList.element.tsx'
+import Chatbot2 from './components/chatbot/Chatbot2.tsx'
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: "/talk-to-us",
         element: <TalkToUs />
+      },
+      {
+        path: "/test-speech",
+        element: <Chatbot2 />
       }
     ]
   

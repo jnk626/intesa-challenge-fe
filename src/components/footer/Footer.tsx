@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { dialog } from "../../assets/icons";
+import { chatbot, dialog } from "../../assets/icons";
 
 export const Footer = () => {
   return (
@@ -16,8 +16,9 @@ export const Footer = () => {
           Carte
         </div>
         <div className="flex flex-col place-items-center">
-          <span>icon</span>
-          Operazioni
+          <NavLink to="/test-speech">
+          {chatbot}
+          </NavLink>
         </div>
         <div className="flex flex-col place-items-center">
           <span>{dialog}</span>
