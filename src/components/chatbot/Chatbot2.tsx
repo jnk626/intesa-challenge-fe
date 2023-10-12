@@ -2,6 +2,16 @@ import { useState } from "react";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
+//import { openai } from "../../service/openai";
+
+/*
+const response = await openai.chat.completions.create({
+  model: "gpt-3.5-turbo",
+  messages: [],
+  temperature: 0,
+  max_tokens: 1024
+})
+*/
 
 const Dictaphone = () => {
   const commands = [
