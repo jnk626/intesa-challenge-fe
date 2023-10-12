@@ -24,6 +24,7 @@ const Dictaphone = () => {
     useSpeechRecognition({ commands });
   const [isListening, setIsListening] = useState(false);
   const [message, setMessage] = useState("");
+  const [chats, setChats] = useState([]);
 
   if (!browserSupportsSpeechRecognition) {
     return <span>Browser doesn't support speech recognition.</span>;
@@ -51,7 +52,7 @@ const Dictaphone = () => {
       {isListening && <button onClick={stopListening}>Stop</button>}
       {transcript && (
         <div>
-          <p>{message}</p>
+          <p>{transcript}</p>
           <br />
           <button onClick={handleReset}>Reset</button>
         </div>

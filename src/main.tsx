@@ -9,12 +9,11 @@ import ErrorPage from './routes/error-page.tsx'
 import Index from './routes/index.tsx'
 import Profile from './components/profile/Profile.tsx'
 import { BankAccount } from './components/bank-account/BankAccount.tsx'
-//import MovementsList from './components/movements-list/MovementList.element.tsx'
-//import movementsLoader from './components/movements-list/MovementList.loader.ts'
 import { accountLoader } from './components/profile/Profile.loader.ts'
 import { TalkToUs } from './components/talk-to-us/TalkToUs.tsx'
 import { MovementsList } from './components/movements-list/MovementList.element.tsx'
-import Chatbot2 from './components/chatbot/Chatbot2.tsx'
+//import Chatbot2 from './components/chatbot/Chatbot2.tsx'
+import ChatbotText from './components/chatbot/ChatbotText.tsx'
 
 const router = createBrowserRouter([
   {
@@ -47,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/test-speech",
-        element: <Chatbot2 />
+        element: <ChatbotText />
       }
     ]
   

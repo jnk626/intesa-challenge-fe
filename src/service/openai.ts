@@ -1,5 +1,5 @@
-//import OpenAI from 'openai'
+import OpenAI from 'openai'
 
-//export const openai = new OpenAI({
-    //apiKey: `${MY-OPENAI-KEY}`
-//})
+export const openai = new OpenAI({
+    apiKey: `${import.meta.env.VITE_OPENAI_KEY}`
+})
